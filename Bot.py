@@ -76,6 +76,14 @@ def callback(call):
         white_root('Root', 'Quest', root='True')
     elif call.data == 'name_question':
         bot.send_message(call.message.chat.id, 'Вопросы:\n' + sum_text_dict(quest_list, sep='\n', counting=True))
+        Keyboard = types.InlineKeyboardMarkup()
+        Button = types.InlineKeyboardButton(text='По № вопроса', callback_data='name_quest_by_number')
+        Keyboard.add(Button)
+        Button = types.InlineKeyboardButton(text='Рандомный вопрос', callback_data='name_quest_random')
+        Keyboard.add(Button)
+        bot.send_sticker(call.message.chat.id,
+                         'CAACAgIAAxkBAAIFJmJB1uIc2WkrwB99vp-fB9FEzW5zAAIJEQACgdCJS58JXvdE8PApIwQ')
+        bot.send_message(call.message.chat.id, 'Как выбрать вопрос?', reply_markup=Keyboard)
     elif call.data == 'name_exit':
         Keyboard = types.InlineKeyboardMarkup()
         Button = types.InlineKeyboardButton(text='По № вопроса', callback_data='name_quest_by_number')
@@ -114,6 +122,13 @@ def messages(message):
             bot.send_message(message.chat.id, 'Этот номер выходит за диапозон вопросов')
     elif message.text == '/question':
         bot.send_message(message.chat.id, 'Вопросы:\n' + sum_text_dict(quest_list, sep='\n', counting=True))
+        Keyboard = types.InlineKeyboardMarkup()
+        Button = types.InlineKeyboardButton(text='По № вопроса', callback_data='name_quest_by_number')
+        Keyboard.add(Button)
+        Button = types.InlineKeyboardButton(text='Рандомный вопрос', callback_data='name_quest_random')
+        Keyboard.add(Button)
+        bot.send_sticker(message.chat.id, 'CAACAgIAAxkBAAIFJmJB1uIc2WkrwB99vp-fB9FEzW5zAAIJEQACgdCJS58JXvdE8PApIwQ')
+        bot.send_message(message.chat.id, 'Как выбрать вопрос?', reply_markup=Keyboard)
     elif message.text == '/exit':
         Keyboard = types.InlineKeyboardMarkup()
         Button = types.InlineKeyboardButton(text='По № вопроса', callback_data='name_quest_by_number')
