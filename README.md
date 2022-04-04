@@ -1,4 +1,4 @@
 # TelegramBot-Test
 Python version 3.9
 moduls PyTelegramBotApi, random
-Python file: Telegramm_bot.py
+Python file: Telegram_bot.py
