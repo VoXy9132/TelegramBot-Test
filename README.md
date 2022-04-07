@@ -1,4 +1,4 @@
-# TelegramBot-Test;
+# TelegramBot-Test
 
 Python version 3.9;
 
