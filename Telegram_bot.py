@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import telebot
 from telebot import types
 from random import choice
@@ -158,7 +158,6 @@ def messages(message):
 
 
 bot.polling(non_stop=True, interval=0)
-=======
 import telebot
 from telebot import types
 from random import choice
@@ -326,4 +325,4 @@ def messages(message):
 
 
 bot.polling(non_stop=True, interval=0)
->>>>>>> 58990dbd22de59875c4beed80408b29edc3c8ee5
+
